@@ -7,6 +7,16 @@ body {
     background-position: 45px 70px;
 }
 
+@font-face {
+    font-family: 'DIN';
+    src: url('DIN-font/DIN.ttf');
+}
+
+@font-face {
+    font-family: 'DIN Medium';
+    src: url('DIN-font/DIN\ Medium.ttf');
+}
+
 #github-header {
     text-align: right;
     padding-top: 5px;
