@@ -1,0 +1,486 @@
+body {
+    background-color: #2b282b;
+    background-image: url(images/icons/Herta-Splash.webp);
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: 100%;
+    background-position: 45px 70px;
+}
+
+#github-header {
+    text-align: right;
+    padding-top: 5px;
+}
+
+#title {
+    text-align: center;
+    font-size: 50px;
+    color: #FFF4FF;
+    font-family: 'DIN Medium', monospace;
+}
+
+#subtitle {
+    font-size: 20px;
+    color: #FFF4FF;
+    font-style: italic;
+    font-family: 'DIN', monospace;
+}
+
+.chosen-grid {
+    margin-top: 35px;
+    height: 250px;
+}
+
+.chosen-chars {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    max-width: 1280px;
+    flex-wrap: wrap;
+}
+
+.chosen-card {
+    display: inline-block;
+}
+
+.sel-char {
+    margin: 10px 15px;
+    border-bottom-left-radius: 35%;
+    border-top-right-radius: 35%;
+    background-color: #00000080;
+    box-shadow: rgba(128, 0, 128, 0.1) 0px 0px 0px 2px;
+}
+
+.chosen-title {
+    color: #FFF4FF;
+    font-family: 'DIN', monospace;
+    font-size: 20px;
+    width: 200px;
+    word-wrap: break-word;
+}
+
+.buttons {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#randomize-button {
+    font-size: 25px;
+    font-family: 'DIN', monospace;
+    color: #FFF4FF;
+    padding: 7px;
+    background-color: #7a39ef;
+    background-image: linear-gradient(#7a39ef, #b629e0);
+    border: 4px solid #5b25be;
+    border-radius: 7px;
+    box-shadow: 0px 0px 35px #800080;
+    transition: .35s ease all;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#randomize-button:hover {
+    background-color: #8344f9;
+    box-shadow: 0px 0px 25px #bf21bf;
+    transition: .35s ease all;
+}
+
+#randomize-button:active {
+    background-color: #5b25be;
+    background-image: linear-gradient(#672ad8, #9f1bc7);
+}
+
+#toggle-all {
+    font-size: 23px;
+    font-family: 'DIN', monospace;
+    color: #111111;
+    padding: 7px;
+    background-color: #f1ecf7;
+    border: 4px solid #800080;
+    border-radius: 7px;
+    transition: .35s ease all;
+    cursor: pointer;
+    margin-top: 45px;
+}
+
+#toggle-all:hover {
+    background-color: #d6cfdf;
+    transition: .35s ease all;
+}
+
+#toggle-all:active {
+    background-color: #adadc8;
+}
+
+#popup {
+    background-color: #211f21;
+    color: #d5c4a0;
+    border-left: 0px;
+    border-right: 3px solid #d5c4a0;
+    border-top: 3px solid #d5c4a0;
+    border-bottom: 3px solid #d5c4a0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-family: monospace;
+    font-size: 35px;
+    padding: 35px 15px;
+    cursor: pointer;
+    position: fixed;
+    left: 0px;
+    top: 45%;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+#popup:hover {
+    border-right: 3px solid #c6a662;
+    border-top: 3px solid #c6a662;
+    border-bottom: 3px solid #c6a662;
+    box-shadow: 7px 0px 12px -5px #ceb682;
+    color: #c6a662;
+}
+
+#popup:hover + #side-menu {
+    border-right: 3px solid #c6a662;
+    box-shadow: 0px 0px 12px #ceb682;
+}
+
+#side-menu {
+    color: #FFF4FF;
+    font-family: 'DIN', monospace;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 35px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #211f21;
+    border-right: 3px solid #2b282b;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+#side-menu.active {
+    border-right: 3px solid #d5c4a0;
+}
+
+.character-card {
+    cursor: pointer;
+    margin: 5px 3px;
+    padding: 0px;
+    border: none;
+    border-top-right-radius: 30px;
+    background-color: #737480;
+}
+
+.character-card:hover {
+    box-shadow: 0px 0px 7px #FFF4FF;
+}
+
+.character-card.lit-up {
+    background-color: #ffffff;
+}
+
+.character-card.lit-up .character-name {
+    color: #2b272b;
+}
+
+.character-card.lit-up .a4star-character-icon {
+    filter:brightness(100%);
+}
+
+.character-card.lit-up .a5star-character-icon {
+    filter:brightness(100%);
+}
+
+.a4star-character-icon {
+    background-color: #795ca4;
+    background-image: url(images/icons/4-star-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    background-blend-mode: overlay;
+    filter:brightness(50%);
+    padding: 0px 3px 0px 0px;
+    position: relative;
+    border-top-right-radius: 30px;
+}
+
+.a5star-character-icon {
+    background-color: #c69059;
+    background-image: url(images/icons/5-star-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    background-blend-mode: overlay;
+    filter:brightness(50%);
+    padding: 0px 3px 0px 0px;
+    position: relative;
+    border-top-right-radius: 30px;
+}
+
+.element-icon {
+    display: inline;
+    position: absolute;
+    left: 125px;
+    top: 70px;
+}
+
+.path-icon {
+    display: inline;
+}
+
+.character-name {
+    font-size: 18px;
+    padding: 5px 5px;
+    font-family: 'DIN Medium', monospace;
+    color: #151515;
+}
+
+.updatelog {
+    margin-top: 35px;
+    display: flex;
+}
+
+.update-text {
+    margin-top: 50px;
+    color: #FFF4FF;
+    font-family: 'DIN', monospace;
+    font-size: 20px;
+}
+
+.features-text {
+    font-size: 25px;
+    padding: 3px 0px 3px 6px;
+    border-left: 6px solid #7b3193;
+    border-bottom-left-radius: 15px;
+    background-color: #8f6ea95b;
+    box-shadow: 0px 0px 15px #80008052;
+}
+
+.version-date {
+    padding: 3px 0px 3px 6px;
+    border-left: 6px solid #7b3193;
+    background-color: #8f6ea95b;
+}
+
+.empty {
+    height: 35px;
+}
+
+#copyright {
+    color: #FFF4FF;
+    font-family: 'DIN', monospace;
+    font-size: 12px;
+    text-align: end;
+}
+
+::selection {
+    background: #e684e662
+}
+
+@media screen and (max-width: 1050px) {
+    body {
+        background-size: 110%;
+        background-position: -5px 100px;
+    }
+
+    .herta {
+        height: 360px;
+        width: 360px;
+    }
+
+    .update-text {
+        margin-top: 35px;
+        font-size: 18px;
+    }
+
+    .features-text {
+        font-size: 22px;
+    }
+
+    .character-card {
+        border-top-right-radius: 27px;
+    }
+
+    .a4star-character-icon {
+        border-top-right-radius: 27px;
+    }
+
+    .a5star-character-icon {
+        border-top-right-radius: 27px;
+    }
+
+    .char-face {
+        height: 90px;
+        width: 90px;
+    }
+
+    .element-icon {
+        left: 91.5px;
+        top: 39px;
+    }
+
+    .character-name {
+        font-size: 16px;
+        padding: 4px 4px;
+    }
+
+    #popup {
+        padding: 30px 12px;
+        font-size: 30px;
+    }
+
+    #side-menu {
+        font-size: 18px;
+    }
+
+    .chosen-grid {
+        height: auto;
+    }
+
+    .sel-char {
+        height: 150px;
+        width: 150px;
+        margin: 0px 7px;
+    }
+
+    .chosen-title {
+        font-size: 18px;
+        width: auto;
+    }
+
+    #title {
+        font-size: 47px;
+    }
+
+    #subtitle {
+        font-size: 18px;
+    }
+
+    #randomize-button {
+        margin-top: 0px;
+        font-size: 20px;
+    }
+
+    #toggle-all {
+        font-size: 18px;
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        background-size: 200%;
+        background-position: 45% 110px;
+    }
+
+    .herta {
+        height: auto;
+        width: 100%;
+    }
+
+    .updatelog {
+        display: block;
+    }
+
+    .update-text {
+        margin-top: 0px;
+        font-size: 14px;
+    }
+
+    .features-text {
+        margin-top: 0px;
+        font-size: 18px;
+    }
+
+    .character-card {
+        border-top-right-radius: 23px;
+    }
+
+    .a4star-character-icon {
+        border-top-right-radius: 23px;
+    }
+
+    .a5star-character-icon {
+        border-top-right-radius: 23px;
+    }
+
+    .char-face {
+        height: 55px;
+        width: 55px;
+    }
+
+    .element-icon {
+        left: 56.5px;
+        top: 20px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .path-icon {
+        height: 16px;
+        width: 16px;
+    }
+
+    .character-name {
+        font-size: 12px;
+        padding: 3px 3px;
+    }
+
+    #popup {
+        padding: 25px 10px;
+        font-size: 25px;
+    }
+
+    #side-menu {
+        font-size: 14px;
+    }
+
+    .sel-char {
+        height: 125px;
+        width: 125px;
+        margin: 0px 5px;
+    }
+
+    .chosen-title {
+        font-size: 14px;
+        width: auto;
+    }
+
+    #title {
+        font-size: 40px;
+    }
+
+    #subtitle {
+        font-size: 15px;
+    }
+
+    #randomize-button {
+        font-size: 17px;
+    }
+    
+    #toggle-all {
+        font-size: 15px;
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .sel-char {
+        height: auto;
+        width: clamp(125px, 30vw, 175px);
+    }
+
+    .chosen-card {
+        margin: 0px 10px;
+    }
+
+    .chosen-title {
+        font-size: clamp(14px, 3vw, 17px);
+        width: clamp(135px, 35vw, 200px);
+    }
+}

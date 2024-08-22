@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Herta's Simulated Team Randomizer is a Honkai: Star Rail randomizer for when you want to spice up 
+        your Simulated Universe, Forgotten Hall, or Pure Fiction runs!">
+    <meta name="author" content="Spruiten">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-ancestors 'self';">
+    <title>Honkai: Star Rail Team Randomizer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/icons/march grin.png">
+</head>
+
+<body>
+    <noscript>Sorry, your browser does not have JavaScript enabled!</noscript>
+    <script src="script.js" defer></script>
+    <header id="github-header">
+        <a href="https://github.com/Luminear/CS-Stuff" target="_blank">
+            <img src="images/icons/march grin.png" alt="GitHub"
+                width="35" height="35">
+        </a>
+    </header>
+    <h1 id="title">Herta's Simulated Team Randomizer</h1>
+    <h3 id="subtitle">
+        <center>Spice up your Simulated&sol;Divergent Universe, MoC, Pure Fiction, or Apoc Shadow runs by using a random team based off your selected
+            characters!</center>
+    </h3>
+    <center>
+        <div class="chosen-grid">
+            <div class="chosen-chars">
+                <div class="chosen-card">
+                    <img src="images/icons/char holder copy.png" class="sel-char" width="175" height="175">
+                    <p class="chosen-title">---</p>
+                </div>
+                <div class="chosen-card">
+                    <img src="images/icons/char holder copy.png" class="sel-char" width="175" height="175">
+                    <p class="chosen-title">---</p>
+                </div>
+                <div class="chosen-card">
+                    <img src="images/icons/char holder copy.png" class="sel-char" width="175" height="175">
+                    <p class="chosen-title">---</p>
+                </div>
+                <div class="chosen-card">
+                    <img src="images/icons/char holder copy.png" class="sel-char" width="175" height="175">
+                    <p class="chosen-title">---</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="randomize-button">Randomize!</button>
+        </div>
+        <div class="buttons">
+            <button id="toggle-all">Select All</button>
+        </div>
+        <div class="character-grid">
+            <button class="character-card" title="Acheron">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/acheron.png"
+                        alt="Acheron" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Acheron</div>
+            </button>
+            <button class="character-card" title="Argenti">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/argenti.png"
+                        alt="Argenti" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Argenti</div>
+            </button>
+            <button class="character-card" title="Arlan">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/arlan.png"
+                        alt="Arlan" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Arlan</div>
+            </button>
+            <button class="character-card" title="Asta">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/asta.png"
+                        alt="Asta" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Asta</div>
+            </button>
+            <button class="character-card" title="Aventurine">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/aventurine.png"
+                        alt="Aventurine" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_preservation.webp"
+                        class="path-icon" title="Preservation">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Aventurine</div>
+            </button>
+            <button class="character-card" title="Bailu">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/bailu.png"
+                        alt="Bailu" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_abundance.webp"
+                        class="path-icon" title="Abundance">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Baliu</div>
+            </button>
+            <button class="character-card" title="Black Swan">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/black-swan.png"
+                        alt="Black Swan" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_wind_bg.webp"
+                        class="element-icon" title="Wind">
+                </div>
+                <div class="character-name">Black Swan</div>
+            </button>
+            <button class="character-card" title="Blade">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/blade.png"
+                        alt="Blade" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_wind_bg.webp"
+                        class="element-icon" title="Wind">
+                </div>
+                <div class="character-name">Blade</div>
+            </button>
+            <button class="character-card" title="Bronya">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/bronya.png"
+                        alt="Bronya" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_wind_bg.webp"
+                        class="element-icon" title="Wind">
+                </div>
+                <div class="character-name">Bronya</div>
+            </button>
+            <button class="character-card" title="Boothill">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/boothill.png"
+                        alt="Boothill" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Boothill</div>
+            </button>
+            <button class="character-card" title="Clara">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/clara.png"
+                        alt="Clara" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Clara</div>
+            </button>
+            <button class="character-card" title="Dan Heng">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/danheng.png"
+                        alt="Dan Heng" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_wind_bg.webp"
+                        class="element-icon" title="Wind">
+                </div>
+                <div class="character-name">Dan Heng</div>
+            </button>
+            <button class="character-card" title="Dan Heng • IL">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/dhil.png"
+                        alt="Dan Heng • IL" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Dan Heng • IL</div>
+            </button>
+            <button class="character-card" title="Dr. Ratio">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/dr-ratio.png"
+                        alt="Dr. Ratio" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Dr. Ratio</div>
+            </button>
+            <button class="character-card" title="Firefly">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/firefly.png"
+                        alt="Firefly" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Firefly</div>
+            </button>
+            <button class="character-card" title="Fu Xuan">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/fu-xuan.png"
+                        alt="Fu Xuan" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_preservation.webp"
+                        class="path-icon" title="Preservation">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Fu Xuan</div>
+            </button>
+            <button class="character-card" title="Gallagher">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/gallagher.png"
+                        alt="Gallagher" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_abundance.webp"
+                        class="path-icon" title="Abundance">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Gallagher</div>
+            </button>
+            <button class="character-card" title="Gepard">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/gepard.png"
+                        alt="Gepard" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_preservation.webp"
+                        class="path-icon" title="Preservation">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Gepard</div>
+            </button>
+            <button class="character-card" title="Guinaifen">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/guinaifen.png"
+                        alt="Guinaifen" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Guinaifen</div>
+            </button>
+            <button class="character-card" title="Hanya">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/hanya.png"
+                        alt="Hanya" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Hanya</div>
+            </button>
+            <button class="character-card" title="Herta">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/herta.png"
+                        alt="Herta" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Herta</div>
+            </button>
+            <button class="character-card" title="Himeko">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/himeko.png"
+                        alt="Himeko" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Himeko</div>
+            </button>
+            <button class="character-card" title="Hook">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/hook.png"
+                        alt="Hook" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Hook</div>
+            </button>
+            <button class="character-card" title="Huohuo">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/huohuo.png"
+                        alt="Huohuo" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_abundance.webp"
+                        class="path-icon" title="Abundance">
+                    <img src="images/icons/ele_wind_bg.webp"
+                        class="element-icon" title="Wind">
+                </div>
+                <div class="character-name">Huohuo</div>
+            </button>
+            <button class="character-card" title="Jade">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/jade.png"
+                        alt="Jade" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Jade</div>
+            </button>
+            <button class="character-card" title="Jing Yuan">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/jing-yuan.png"
+                        alt="Jing Yuan" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Jing Yuan</div>
+            </button>
+            <button class="character-card" title="Jingliu">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/jingliu.png"
+                        alt="Jingliu" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Jingliu</div>
+            </button>
+            <button class="character-card" title="Kafka">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/kafka.png"
+                        alt="Kafka" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Kafka</div>
+            </button>
+            <button class="character-card" title="Luka">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/luka.png"
+                        alt="Luka" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Luka</div>
+            </button>
+            <button class="character-card" title="Luocha">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/luocha.png"
+                        alt="Luocha" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_abundance.webp"
+                        class="path-icon" title="Abundance">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Luocha</div>
+            </button>
+            <button class="character-card" title="Lynx">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/lynx.png"
+                        alt="Lynx" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_abundance.webp"
+                        class="path-icon" title="Abundance">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Lynx</div>
+            </button>
+            <button class="character-card" title="March 7th">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/march7th.png"
+                        alt="March 7th" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_preservation.webp"
+                        class="path-icon" title="Preservation">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">March 7th</div>
+            </button>
+            <button class="character-card" title="March 7th (Hunt)">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/march7th-hunt.png"
+                        alt="March 7th" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">March 7th</div>
+            </button>
+            <button class="character-card" title="Misha">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/misha.png"
+                        alt="Misha" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Misha</div>
+            </button>
+            <button class="character-card" title="Natasha">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/natasha.png"
+                        alt="Natasha" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_abundance.webp"
+                        class="path-icon" title="Abundance">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Natasha</div>
+            </button>
+            <button class="character-card" title="Pela">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/pela.png"
+                        alt="Pela" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Pela</div>
+            </button>
+            <button class="character-card" title="Qingque">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/qingque.png"
+                        alt="Qingque" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Qingque</div>
+            </button>
+            <button class="character-card" title="Robin">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/robin.png"
+                        alt="Robin" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Robin</div>
+            </button>
+            <button class="character-card" title="Ruan Mei">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/ruan-mei.png"
+                        alt="Ruan Mei" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Ruan Mei</div>
+            </button>
+            <button class="character-card" title="Sampo">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/sampo.png"
+                        alt="Sampo" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_wind_bg.webp"
+                        class="element-icon" title="Wind">
+                </div>
+                <div class="character-name">Sampo</div>
+            </button>
+            <button class="character-card" title="Seele">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/seele.png"
+                        alt="Seele" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Seele</div>
+            </button>
+            <button class="character-card" title="Serval">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/serval.png"
+                        alt="Serval" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Serval</div>
+            </button>
+            <button class="character-card" title="Silver Wolf">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/silver-wolf.png"
+                        alt="Silver Wolf" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Silver Wolf</div>
+            </button>
+            <button class="character-card" title="Sparkle">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/sparkle.png"
+                        alt="Sparkle" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Sparkle</div>
+            </button>
+            <button class="character-card" title="Sushang">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/sushang.png"
+                        alt="Sushang" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Sushang</div>
+            </button>
+            <button class="character-card" title="Tingyun">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/tingyun.png"
+                        alt="Tingyun" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_lightning_bg.webp"
+                        class="element-icon" title="Lightning">
+                </div>
+                <div class="character-name">Tingyun</div>
+            </button>
+            <button class="character-card" title="Topaz">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/topaz.png"
+                        alt="Topaz" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Topaz</div>
+            </button>
+            <button class="character-card" title="Trailblazer (Fire)">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/fire-trailblazer.png"
+                        alt="Trailblazer (Fire)" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_preservation.webp"
+                        class="path-icon" title="Preservation">
+                    <img src="images/icons/ele_fire_bg.webp"
+                        class="element-icon" title="Fire">
+                </div>
+                <div class="character-name">Trailblazer</div>
+            </button>
+            <button class="character-card" title="Trailblazer (Imaginary)">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/imaginary-trailblazer.png"
+                        alt="Trailblazer (Imaginary)" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Trailblazer</div>
+            </button>
+            <button class="character-card" title="Trailblazer (Physical)">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/physical-trail.png"
+                        alt="Trailblazer (Physical)" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Trailblazer</div>
+            </button>
+            <button class="character-card" title="Welt">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/welt.png"
+                        alt="Welt" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_nihility.webp"
+                        class="path-icon" title="Nihility">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Welt</div>
+            </button>
+            <button class="character-card" title="Xueyi">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/xueyi.png"
+                        alt="Xueyi" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_quantum_bg.webp"
+                        class="element-icon" title="Quantum">
+                </div>
+                <div class="character-name">Xueyi</div>
+            </button>
+            <button class="character-card" title="Yanqing">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/yanqing.png"
+                        alt="Yanqing" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_hunt.webp"
+                        class="path-icon" title="Hunt">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">Yanqing</div>
+            </button>
+            <button class="character-card" title="Yukong">
+                <div class="a4star-character-icon">
+                    <img src="images/characters/yukong.png"
+                        alt="Yukong" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_harmony.webp"
+                        class="path-icon" title="Harmony">
+                    <img src="images/icons/ele_imaginary_bg.webp"
+                        class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Yukong</div>
+            </button>
+            <button class="character-card" title="Yunli">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/yunli.png"
+                        alt="Yunli" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_destruction.webp"
+                        class="path-icon" title="Destruction">
+                    <img src="images/icons/ele_physical_bg.webp"
+                        class="element-icon" title="Physical">
+                </div>
+                <div class="character-name">Yunli</div>
+            </button>
+        </div>
+    </center>
+    <div class="updatelog">
+        <img src="images/icons/Herta-Avatar.webp"
+            class="herta" height="500" width="500">
+        <div class="update-text">
+            <p class="features-text">Dev Notes and Changelog</p>
+            <ul>
+                <li>Welcome to the debut of Herta's Simulated Team Randomizer! New characters will be added accordingly
+                    whenever they are released.</li>
+                <div id="versions">
+                    <p class="version-date">2024-08-20</p>
+                    <ul>
+                        <li>Improved Character Image Quality</li>
+                        <li>Added Jiaoqiu</li>
+                    </ul>
+                    <p class="version-date">2024-08-14</p>
+                    <ul>
+                        <li>Revamped Character Button Design</li>
+                    </ul>
+                </div>
+            </ul>
+            <p class="features-text">Possible Upcoming Features</p>
+            <ul>
+                <li>Selection feature that lets you sort characters by element and path</li>
+                <li>Feature that allows you to select specific requirements that the randomized team must have (e.g. team must
+                    include Silver Wolf and at least one hunt character)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="empty"></div>
+    <button id="popup">&gt;</button>
+    <div id="side-menu">
+        <p>Coming soon!</p>
+        <img src="images/icons/Ruan-Mei-Avatar.webp" class="ruan-mei" height="245" width="245">
+    </div>
+    <footer id="copyright">This site is not affiliated with miHoYo. Honkai: Star Rail and its game content/materials 
+        are trademarks and copyrights of miHoYo. © All rights reserved by miHoYo.</footer>
+</body>
+
+</html>
+<!--This is a comment.-->
