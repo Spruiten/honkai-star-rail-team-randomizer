@@ -237,10 +237,14 @@ body {
     position: absolute;
     left: 125px;
     top: 70px;
+    height: 28px;
+    width: 28px;
 }
 
 .path-icon {
     display: inline;
+    height: 24px;
+    width: 24px;
 }
 
 .character-name {
