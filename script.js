@@ -26,6 +26,26 @@ popButton.addEventListener('click', function () {
     }
 });
 
+function removeDuplicates(selectedValue, index, randPool) {
+    randPool.splice(index, 1);
+    const duplicates = randPool.filter(button => button.hasAttribute('data-duplicate'));
+    const dupeValue = selectedValue.getAttribute('data-duplicate');
+    const selectedDupes = [];
+    for (let dupe of duplicates) {
+        let tempo = dupe.getAttribute('data-duplicate');
+        if (tempo == dupeValue) {
+            selectedDupes.push(dupe);
+        }
+    }
+    let dupeindex = 0;
+    let i = 0;
+    for (let dupe of selectedDupes) {
+        dupeindex = randPool.indexOf(selectedDupes[i]);
+        randPool.splice(dupeindex, 1);
+        i += 1;
+    }
+};
+
 randButton.addEventListener('click', function () {
     for (const name of selTitle) { // clears names so previous leftovers won't appear once chars < 4
         name.textContent = "---";
@@ -36,26 +56,46 @@ randButton.addEventListener('click', function () {
     const litUpButtons = Array.from(charButtons).filter(button => button.classList.contains('lit-up'));
     const chosen = [];
     let index = 0;
-    if (litUpButtons.length <= 4) { // won't be in random order, it will be alphabetical order
-        for (let i = 0; i < litUpButtons.length; i++) {
-            selTitle[i].textContent = litUpButtons[i].getAttribute('title');
-            selChar[i].src = litUpButtons[i].querySelector('.char-face').getAttribute('src');
-          }
+    if (litUpButtons.length == 0) {
+        const funny = ["..Seriously?", "You may need more nurturing...", "Uh, take your time.",
+             "You can click the buttons below to add them to the pool of characters so the randomizer can properly function as intended."];
+        for (let i = 0; i < 4; i++) {
+            selTitle[i].textContent = funny[i];
+        }
+        selChar[0].src = "images/icons/Herta-Avatar.webp";
+        selChar[1].src = "images/icons/Ruan-Mei-Avatar.webp";
+        selChar[2].src = "images/icons/Stephen-Lloyd-Avatar.webp";
+        selChar[3].src = "images/icons/Screwllum-Avatar.webp";
     } else {
         for (let i = 0; i < 4; i++) {
             chosen.push(randomValueFromArray(litUpButtons));
             index = litUpButtons.indexOf(chosen[i]);
-            litUpButtons.splice(index, 1);
+            // prevents duplicate Trailblazer and March 7th
+            if (litUpButtons[index].hasAttribute('data-duplicate')) {
+                removeDuplicates(litUpButtons[index], index, litUpButtons);
+            } else {
+                litUpButtons.splice(index, 1);
+            }
+            if (litUpButtons.length == 0) {
+                break;
+            }
           }
+        let maxLen = chosen.length;
         i = 0;
         for (const name of selTitle) {
             name.textContent = chosen[i].getAttribute('title');
             i += 1;
+            if (i >= maxLen) {
+                break;
+            }
         }
         i = 0;
         for (const icon of selChar) {
             icon.src = chosen[i].querySelector('.char-face').getAttribute('src');
             i += 1;
+            if (i >= maxLen) {
+                break;
+            }
         }
     }
 });

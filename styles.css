@@ -75,7 +75,7 @@ body {
 }
 
 #randomize-button {
-    font-size: 25px;
+    font-size: 27px;
     font-family: 'DIN', monospace;
     color: #FFF4FF;
     padding: 7px;
@@ -86,7 +86,7 @@ body {
     box-shadow: 0px 0px 35px #800080;
     transition: .35s ease all;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 #randomize-button:hover {
@@ -364,7 +364,7 @@ body {
 
     .chosen-title {
         font-size: 18px;
-        width: auto;
+        width: 180px;
     }
 
     #title {
@@ -377,7 +377,7 @@ body {
 
     #randomize-button {
         margin-top: 0px;
-        font-size: 20px;
+        font-size: 23px;
     }
 
     #toggle-all {
@@ -462,7 +462,7 @@ body {
 
     .chosen-title {
         font-size: 14px;
-        width: auto;
+        width: 140px;
     }
 
     #title {
@@ -474,7 +474,7 @@ body {
     }
 
     #randomize-button {
-        font-size: 17px;
+        font-size: 20px;
     }
     
     #toggle-all {
