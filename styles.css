@@ -616,6 +616,11 @@ body {
 }
 
 @media screen and (max-width: 570px) {
+    body {
+        background-size: 200%;
+        background-position: 45% 175px;
+    }
+    
     .sel-char {
         height: auto;
         width: clamp(125px, 30vw, 175px);
