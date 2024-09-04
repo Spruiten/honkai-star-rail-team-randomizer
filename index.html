@@ -26,8 +26,8 @@
     </header>
     <h1 id="title">Herta's Simulated Team Randomizer</h1>
     <h3 id="subtitle">
-        <center>Spice up your Simulated&sol;Divergent Universe, MoC, Pure Fiction, or Apoc Shadow runs by using a random team based off your selected
-            characters!</center>
+        <center>Spice up your Simulated&sol;Divergent Universe, Memory of Chaos, Pure Fiction, or Apocalyptic Shadow runs by using a 
+            random team based on your selected characters!</center>
     </h3>
     <center>
         <div class="chosen-grid">
@@ -676,6 +676,7 @@
         </div>
     </center>
     <div class="updatelog">
+        <img src="images/icons/sim-uni-bg.png" id="star">
         <img src="images/icons/Herta-Avatar.webp"
             class="herta" height="500" width="500" alt="Herta's Simulated Universe Avatar">
         <div class="update-text">
@@ -684,25 +685,25 @@
                 <li>Welcome to the debut of Herta's Simulated Team Randomizer! New characters will be added accordingly
                     whenever they are released.</li>
                 <div id="versions">
+                    <p class="version-date">2024-09-04</p>
+                    <ul>
+                        <li>UI Changes</li>
+                        <li>Added a Full Changelog and Settings in Side Navigation Menu</li>
+                    </ul>
                     <p class="version-date">2024-08-25</p>
                     <ul>
                         <li>Fixed the issue with multiple Trailblazers or March 7ths being in the same team</li>
                         <li>Added a cool little easter egg when randomizing with no characters chosen</li>
                     </ul>
-                    <p class="version-date">2024-08-20</p>
+                    <p class="version-date">2024-08-23</p>
                     <ul>
-                        <li>Improved Character Image Quality</li>
-                        <li>Added Jiaoqiu</li>
-                    </ul>
-                    <p class="version-date">2024-08-14</p>
-                    <ul>
-                        <li>Revamped Character Button Design</li>
+                        <li>Release :v</li>
                     </ul>
                 </div>
             </ul>
             <p class="features-text">Possible Upcoming Features</p>
             <ul>
-                <li>Selection feature that lets you sort characters by element and path</li>
+                <li>Selection feature that lets you filter characters by element and path</li>
                 <li>Feature that allows you to select specific requirements that the randomized team must have (e.g. team must
                     include Silver Wolf and at least one hunt character)</li>
             </ul>
@@ -711,9 +712,52 @@
     <div class="empty"></div>
     <button id="popup">&gt;</button>
     <div id="side-menu">
-        <p>Coming soon!</p>
         <img src="images/icons/Ruan-Mei-Avatar.webp" class="ruan-mei" height="245" width="245" 
         alt="Ruan Mei's Simulated Universe Avatar">
+        <p id="changelog-button">Changelog</p>
+        <p id="settings-button">Settings</p>
+    </div>
+    <div id="changelog">
+        <div id="changelog-inner">
+            <p id="changelog-header">Full Changelog</p>
+            <svg xmlns="http://www.w3.org/2000/svg" id="close-changelog" height="24px" viewBox="0 -960 960 960" width="24px" 
+            fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            <div id="changelog-list">
+                <p>2024-09-04</p>
+                <ul>
+                    <li>UI Changes</li>
+                    <li>Added a Full Changelog and Settings in Side Navigation Menu</li>
+                </ul>
+                <p>2024-08-25</p>
+                <ul>
+                    <li>Fixed the issue with multiple Trailblazers or March 7ths being in the same team</li>
+                    <li>Added a cool little easter egg when randomizing with no characters chosen</li>
+                </ul>
+                <p>2024-08-23</p>
+                <ul>
+                    <li>Release :v</li>
+                </ul>
+                <p>2024-08-20</p>
+                <ul>
+                    <li>Improved Character Image Quality</li>
+                    <li>Added Jiaoqiu</li>
+                </ul>
+                <p>2024-08-14</p>
+                <ul>
+                    <li>Revamped Character Button Design</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="settings">
+        <div id="settings-inner">
+            <p id="settings-header">Settings</p>
+            <svg xmlns="http://www.w3.org/2000/svg" id="close-settings" height="24px" viewBox="0 -960 960 960" width="24px" 
+            fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            <div id="settings-list">
+                <p>Work In Progress</p>
+            </div>
+        </div>
     </div>
     <footer id="copyright">This site is not affiliated with miHoYo. Honkai: Star Rail and its game content/materials 
         are trademarks and copyrights of miHoYo. © All rights reserved by miHoYo.</footer>

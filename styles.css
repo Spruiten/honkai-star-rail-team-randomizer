@@ -4,7 +4,8 @@ body {
     background-repeat: no-repeat;
     background-blend-mode: overlay;
     background-size: 100%;
-    background-position: 45px 70px;
+    background-position: 45px 105px;
+    margin: 0px;
 }
 
 @font-face {
@@ -19,7 +20,7 @@ body {
 
 #github-header {
     text-align: right;
-    padding-top: 5px;
+    padding: 12px 12px 0px 0px;
 }
 
 #title {
@@ -31,9 +32,10 @@ body {
 
 #subtitle {
     font-size: 20px;
-    color: #FFF4FF;
-    font-style: italic;
+    color: #c9c4c9;
     font-family: 'DIN', monospace;
+    margin-left: clamp(10px, 15vw, 200px);
+    margin-right: clamp(10px, 15vw, 200px);
 }
 
 .chosen-grid {
@@ -78,15 +80,50 @@ body {
     font-size: 27px;
     font-family: 'DIN', monospace;
     color: #FFF4FF;
-    padding: 7px;
-    background-color: #7a39ef;
+    text-align: center;
+    width: 175px;
+    height: 55px;
     background-image: linear-gradient(#7a39ef, #b629e0);
-    border: 4px solid #5b25be;
+    border: 0px;
     border-radius: 7px;
-    box-shadow: 0px 0px 35px #800080;
     transition: .35s ease all;
     cursor: pointer;
     margin-top: 25px;
+    position: relative;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#randomize-button::after, #randomize-button::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff0000, #0000ff, #ff0000);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 7px;
+    animation: 3.5s spin linear infinite;
+}
+
+@keyframes spin{
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+#randomize-button::before {
+    filter: blur(1.5rem);
 }
 
 #randomize-button:hover {
@@ -106,7 +143,7 @@ body {
     color: #111111;
     padding: 7px;
     background-color: #f1ecf7;
-    border: 4px solid #800080;
+    border: 3px solid #800080;
     border-radius: 7px;
     transition: .35s ease all;
     cursor: pointer;
@@ -150,6 +187,7 @@ body {
     color: #c6a662;
 }
 
+/*When pop-up is hovering, side-menu border color changes */
 #popup:hover + #side-menu {
     border-right: 3px solid #c6a662;
     box-shadow: 0px 0px 12px #ceb682;
@@ -175,6 +213,12 @@ body {
 
 #side-menu.active {
     border-right: 3px solid #d5c4a0;
+    width: 280px;
+}
+
+.character-grid {
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .character-card {
@@ -187,11 +231,15 @@ body {
 }
 
 .character-card:hover {
-    box-shadow: 0px 0px 7px #FFF4FF;
+    box-shadow: 0px 0px 3px 3px #6EE0B6;
 }
 
 .character-card.lit-up {
     background-color: #ffffff;
+}
+
+.character-card.lit-up:hover {
+    box-shadow: 0px 0px 0px 3px #C197FF;
 }
 
 .character-card.lit-up .character-name {
@@ -255,12 +303,25 @@ body {
 }
 
 .updatelog {
+    position: relative;
     margin-top: 35px;
     display: flex;
 }
 
+#star {
+    position: absolute;
+    top: 20%;
+    left: 50%; /* Align the overlay horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the overlay */
+    z-index: -1;
+    width: 95vw;
+    height: auto;
+    opacity: 0.6;
+}
+
 .update-text {
     margin-top: 50px;
+    margin-right: 5px;
     color: #FFF4FF;
     font-family: 'DIN', monospace;
     font-size: 20px;
@@ -285,11 +346,79 @@ body {
     height: 35px;
 }
 
+#changelog-button, #settings-button {
+    cursor: pointer;
+    margin: 0px;
+    padding: 15px 0px;
+}
+
+#changelog-button:hover, #settings-button:hover {
+    background-color: #2d2c2d;
+}
+
+#changelog, #settings {
+    opacity: 0;
+    background-color: #00000059;
+    position: fixed;
+    color: #FFF4FF;
+    font-family: 'DIN', monospace;
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center; /*horizontal*/
+    align-items: center; /*vertical*/
+}
+
+#changelog.open, #settings.open {
+    z-index: 2;
+    opacity: 1;
+}
+
+#changelog-inner, #settings-inner {
+    background-color: #0000000c;
+    backdrop-filter: blur(7px) saturate(135%);
+    box-shadow: 0 4px 30px #C197FF;
+    height: 85%;
+    width: min(450px, 80vw);
+    border-radius: 35px;
+    border: solid 1px #C197FFB2;
+    padding: 0px 5px 15px 5px;
+    position: relative;
+}
+
+#changelog-header, #settings-header {
+    text-align: center;
+    font-size: 25px;
+}
+
+#close-changelog, #close-settings {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer; 
+}
+
+#changelog-list, #settings-list {
+    overflow: scroll;
+    height: 85%;
+    padding: 0px 20px;
+}
+
+#settings-list {
+    text-align: center;
+    padding-top: 200px;
+}
+
 #copyright {
     color: #FFF4FF;
     font-family: 'DIN', monospace;
     font-size: 12px;
     text-align: end;
+    margin: 0px 8px 8px 0px;
 }
 
 ::selection {
@@ -299,12 +428,17 @@ body {
 @media screen and (max-width: 1050px) {
     body {
         background-size: 110%;
-        background-position: -5px 100px;
+        background-position: -5px 135px;
     }
 
     .herta {
         height: 360px;
         width: 360px;
+    }
+
+    #star {
+        width: 100vw;
+        top: 30%;
     }
 
     .update-text {
@@ -341,11 +475,6 @@ body {
     .character-name {
         font-size: 16px;
         padding: 4px 4px;
-    }
-
-    #popup {
-        padding: 30px 12px;
-        font-size: 30px;
     }
 
     #side-menu {
@@ -389,7 +518,7 @@ body {
 @media screen and (max-width: 700px) {
     body {
         background-size: 200%;
-        background-position: 45% 110px;
+        background-position: 45% 50px;
     }
 
     .herta {
@@ -399,7 +528,14 @@ body {
 
     .updatelog {
         display: block;
+        overflow: hidden;
     }
+
+    #star {
+        width: 175vw;
+        top: 50%;
+    }
+
 
     .update-text {
         margin-top: 0px;
@@ -443,11 +579,6 @@ body {
     .character-name {
         font-size: 12px;
         padding: 3px 3px;
-    }
-
-    #popup {
-        padding: 25px 10px;
-        font-size: 25px;
     }
 
     #side-menu {
@@ -496,5 +627,18 @@ body {
     .chosen-title {
         font-size: clamp(14px, 3vw, 17px);
         width: clamp(135px, 35vw, 200px);
+    }
+
+    #star {
+        width: 205vw;
+        top: 50%;
+    }
+
+    #changelog, #settings {
+        font-size: 17px;
+    }
+
+    #changelog-header, #settings-header {
+        font-size: 20px;
     }
 }

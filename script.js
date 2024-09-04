@@ -5,6 +5,13 @@ const selChar = document.getElementsByClassName("sel-char");
 const selTitle = document.getElementsByClassName("chosen-title");
 const toggleAllButton = document.getElementById('toggle-all');
 const charButtons = document.querySelectorAll('.character-card');
+const changelogMenu = document.getElementById('changelog');
+const changelogButton = document.getElementById('changelog-button');
+const closeChangelog = document.getElementById('close-changelog');
+const settingsMenu = document.getElementById('settings');
+const settingsButton = document.getElementById('settings-button');
+const closeSettings = document.getElementById('close-settings');
+
 
 function randomValueFromArray(array){
     const random = Math.floor(Math.random() * array.length);
@@ -15,15 +22,29 @@ function randomValueFromArray(array){
 popButton.addEventListener('click', function () {
     if (popButton.textContent == ">") {
         popButton.textContent = "<";
-        sideMenu.style.width = "260px";
         sideMenu.classList.add('active');
-        popButton.style.marginLeft = "260px";
+        popButton.style.marginLeft = "280px";
     } else {
         popButton.textContent = ">"
-        sideMenu.style.width = "0";
         popButton.style.marginLeft = "0";
         sideMenu.classList.remove('active');
     }
+});
+
+changelogButton.addEventListener('click', () => {
+    changelogMenu.classList.add("open");
+});
+
+closeChangelog.addEventListener('click', () => {
+    changelogMenu.classList.remove("open");
+});
+
+settingsButton.addEventListener('click', () => {
+    settingsMenu.classList.add("open");
+});
+
+closeSettings.addEventListener('click', () => {
+    settingsMenu.classList.remove("open");
 });
 
 function removeDuplicates(selectedValue, index, randPool) {
