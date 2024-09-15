@@ -23,11 +23,11 @@ popButton.addEventListener('click', function () {
     if (popButton.textContent == ">") {
         popButton.textContent = "<";
         sideMenu.classList.add('active');
-        popButton.style.marginLeft = "280px";
+        popButton.classList.add('active');
     } else {
         popButton.textContent = ">"
-        popButton.style.marginLeft = "0";
         sideMenu.classList.remove('active');
+        popButton.classList.remove('active');
     }
 });
 

@@ -176,6 +176,7 @@ body {
     position: fixed;
     left: 0px;
     top: 45%;
+    margin-left: 0px;
     transition: 0.5s;
     z-index: 2;
 }
@@ -192,6 +193,10 @@ body {
 #popup:hover + #side-menu {
     border-right: 3px solid #c6a662;
     box-shadow: 0px 0px 12px #ceb682;
+}
+
+#popup.active {
+    margin-left: 280px;
 }
 
 #side-menu {
@@ -218,8 +223,7 @@ body {
 }
 
 .character-grid {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin: 0px 8px;
 }
 
 .character-card {
@@ -229,6 +233,7 @@ body {
     border: none;
     border-top-right-radius: 30px;
     background-color: #737480;
+    width: 140px;
 }
 
 .character-card:hover {
@@ -263,9 +268,9 @@ body {
     background-position: top;
     background-blend-mode: overlay;
     filter:brightness(50%);
-    padding: 0px 3px 0px 0px;
     position: relative;
     border-top-right-radius: 30px;
+    height: 142px;
 }
 
 .a5star-character-icon {
@@ -276,24 +281,34 @@ body {
     background-position: top;
     background-blend-mode: overlay;
     filter:brightness(50%);
-    padding: 0px 3px 0px 0px;
     position: relative;
+    border-top-right-radius: 30px;
+    height: 142px;
+}
+
+.char-face {
+    width: 140px;
+    height: 140px;
     border-top-right-radius: 30px;
 }
 
 .element-icon {
-    display: inline;
     position: absolute;
-    left: 125px;
-    top: 70px;
+    left: 5px;
+    top: 5px;
     height: 28px;
     width: 28px;
 }
 
 .path-icon {
-    display: inline;
-    height: 24px;
-    width: 24px;
+    position: absolute;
+    left: 6px;
+    top: 35px;
+    height: 20px;
+    width: 20px;
+    background-color: #00000059;
+    padding: 3px;
+    border-radius: 50%;
 }
 
 .character-name {
@@ -392,8 +407,11 @@ body {
 }
 
 #changelog-header, #settings-header {
+    margin: 0px;
+    padding: 20px 0px;
     text-align: center;
     font-size: 25px;
+    border-bottom: solid 2px #C197FF;
 }
 
 #close-changelog, #close-settings {
@@ -451,33 +469,6 @@ body {
         font-size: 22px;
     }
 
-    .character-card {
-        border-top-right-radius: 27px;
-    }
-
-    .a4star-character-icon {
-        border-top-right-radius: 27px;
-    }
-
-    .a5star-character-icon {
-        border-top-right-radius: 27px;
-    }
-
-    .char-face {
-        height: 90px;
-        width: 90px;
-    }
-
-    .element-icon {
-        left: 91.5px;
-        top: 39px;
-    }
-
-    .character-name {
-        font-size: 16px;
-        padding: 4px 4px;
-    }
-
     #side-menu {
         font-size: 18px;
     }
@@ -516,7 +507,7 @@ body {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     body {
         background-size: 200%;
         background-position: 45% 50px;
@@ -549,25 +540,22 @@ body {
     }
 
     .character-card {
-        border-top-right-radius: 23px;
+        width: 105px;
+        border-top-right-radius: 20px;
     }
 
-    .a4star-character-icon {
-        border-top-right-radius: 23px;
-    }
-
-    .a5star-character-icon {
-        border-top-right-radius: 23px;
+    .a4star-character-icon, .a5star-character-icon {
+        height: 107px;
+        border-top-right-radius: 20px;
     }
 
     .char-face {
-        height: 55px;
-        width: 55px;
+        height: 105px;
+        width: 105px;
+        border-top-right-radius: 20px;
     }
 
     .element-icon {
-        left: 56.5px;
-        top: 20px;
         height: 20px;
         width: 20px;
     }
@@ -575,10 +563,12 @@ body {
     .path-icon {
         height: 16px;
         width: 16px;
+        top: 25px;
+        padding: 1px;
     }
 
     .character-name {
-        font-size: 12px;
+        font-size: 14px;
         padding: 3px 3px;
     }
 
@@ -635,9 +625,57 @@ body {
         width: clamp(135px, 35vw, 200px);
     }
 
+    .character-grid {
+        margin: 0px 5px;
+    }
+
+    .character-card {
+        width: 75px;
+        border-top-right-radius: 15px;
+    }
+
+    .a4star-character-icon, .a5star-character-icon {
+        height: 77px;
+        border-top-right-radius: 15px;
+    }
+
+    .char-face {
+        height: 75px;
+        width: 75px;
+        border-top-right-radius: 15px;
+    }
+
+    .element-icon {
+        height: 18px;
+        width: 18px;
+        top: 3px;
+        left: 3px;
+    }
+
+    .path-icon {
+        height: 14px;
+        width: 14px;
+        top: 22px;
+        left: 4px;
+        padding: 1px;
+    }
+
+    .character-name {
+        font-size: 12px;
+        padding: 3px 1px;
+    }
+
     #star {
         width: 205vw;
         top: 50%;
+    }
+
+    #popup {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        font-family: monospace;
+        font-size: 25px;
+        padding: 25px 10px;
     }
 
     #changelog, #settings {
