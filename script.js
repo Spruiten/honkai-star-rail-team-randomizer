@@ -11,7 +11,17 @@ const closeChangelog = document.getElementById('close-changelog');
 const settingsMenu = document.getElementById('settings');
 const settingsButton = document.getElementById('settings-button');
 const closeSettings = document.getElementById('close-settings');
+const scrollToTopButton = document.getElementById('scroll-top');
 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+      scrollToTopButton.style.display = "block";
+    } else {
+      scrollToTopButton.style.display = "none";
+    }
+}
 
 function randomValueFromArray(array){
     const random = Math.floor(Math.random() * array.length);
@@ -46,6 +56,11 @@ settingsButton.addEventListener('click', () => {
 closeSettings.addEventListener('click', () => {
     settingsMenu.classList.remove("open");
 });
+
+scrollToTopButton.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
 
 function removeDuplicates(selectedValue, index, randPool) {
     randPool.splice(index, 1);
