@@ -35,7 +35,6 @@ function filter(array) {
         console.log('Pushing Array!');
     }
     if (activeChars.length == 0) {
-        console.log('Empty Array!');
         for (let char of charButtons) {
             char.style.display = "inline-block";
         }
