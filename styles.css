@@ -160,6 +160,20 @@ body {
     background-color: #adadc8;
 }
 
+.filters {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #c6a662;
+    background-color: #0b0d01;
+    border-radius: 7px;
+    filter:brightness(50%);
+}
+
+.filters.active {
+    filter:brightness(100%);
+}
+
 #scroll-top {
     display: none;
     cursor: pointer;
@@ -246,6 +260,7 @@ body {
 }
 
 .character-card {
+    display: inline-block;
     cursor: pointer;
     margin: 5px 3px;
     padding: 0px;
@@ -517,11 +532,11 @@ body {
 
     #randomize-button {
         margin-top: 0px;
-        font-size: 23px;
+        font-size: 25px;
     }
 
     #toggle-all {
-        font-size: 18px;
+        font-size: 20px;
         margin-top: 35px;
     }
 }
@@ -619,7 +634,7 @@ body {
     }
     
     #toggle-all {
-        font-size: 15px;
+        font-size: 18px;
         margin-top: 25px;
     }
 }

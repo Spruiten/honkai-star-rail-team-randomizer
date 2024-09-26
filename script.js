@@ -12,6 +12,61 @@ const settingsMenu = document.getElementById('settings');
 const settingsButton = document.getElementById('settings-button');
 const closeSettings = document.getElementById('close-settings');
 const scrollToTopButton = document.getElementById('scroll-top');
+const filterButtons = Array.from(document.getElementsByClassName('filters'));
+const physChars = Array.from(charButtons).filter(button => button.classList.contains('physical'));
+const fireChars = Array.from(charButtons).filter(button => button.classList.contains('fire'));
+const physicalFilterButton = document.getElementById('physical-filter');
+const fireFilterButton = document.getElementById('fire-filter');
+let activeChars = [];
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', ()=> {
+        button.classList.toggle('active');
+    });
+});
+
+function filter(array) {
+    if (activeChars.includes(array)) {
+        const index = activeChars.indexOf(array);
+        activeChars.splice(index, 1);
+        console.log('Removing Array!');
+    } else {
+        activeChars.push(array);
+        console.log('Pushing Array!');
+    }
+    if (activeChars.length == 0) {
+        console.log('Empty Array!');
+        for (let char of charButtons) {
+            char.style.display = "inline-block";
+        }
+    } else {
+        let activeCharButtons = [];
+        for (let chars of activeChars) {
+            for (let char of chars) {
+                if (activeCharButtons.includes(char)) {
+                     continue;
+                }
+                activeCharButtons.push(char);
+                console.log(char.getAttribute('title'));
+            }
+        }
+        for (let char of charButtons) {
+            if (activeCharButtons.includes(char)) {
+                char.style.display = "inline-block";
+                continue;
+            }
+            char.style.display = "none";
+        }
+    }
+}
+
+physicalFilterButton.addEventListener('click', ()=> {
+    filter(physChars);
+});
+
+fireFilterButton.addEventListener('click', ()=> {
+    filter(fireChars);
+});
 
 window.onscroll = function() {scrollFunction()};
 
