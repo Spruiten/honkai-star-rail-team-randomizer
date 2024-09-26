@@ -160,14 +160,24 @@ body {
     background-color: #adadc8;
 }
 
+#filter-elements, #filter-paths {
+    display: inline-block;
+    margin-right: min(21px, 6vw);
+}
+
 .filters {
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border: 2px solid #c6a662;
     background-color: #0b0d01;
     border-radius: 7px;
     filter:brightness(50%);
+}
+
+.filters:hover {
+    background-color: #8c8c8ce5;
+    border: 2px solid #f5c355;
 }
 
 .filters.active {

@@ -15,8 +15,19 @@ const scrollToTopButton = document.getElementById('scroll-top');
 const filterButtons = Array.from(document.getElementsByClassName('filters'));
 const physChars = Array.from(charButtons).filter(button => button.classList.contains('physical'));
 const fireChars = Array.from(charButtons).filter(button => button.classList.contains('fire'));
+const iceChars = Array.from(charButtons).filter(button => button.classList.contains('ice'));
+const lightningChars = Array.from(charButtons).filter(button => button.classList.contains('lightning'));
+const windChars = Array.from(charButtons).filter(button => button.classList.contains('wind'));
+const quantumChars = Array.from(charButtons).filter(button => button.classList.contains('quantum'));
+const imaginaryChars = Array.from(charButtons).filter(button => button.classList.contains('imaginary'));
 const physicalFilterButton = document.getElementById('physical-filter');
 const fireFilterButton = document.getElementById('fire-filter');
+const iceFilterButton = document.getElementById('ice-filter');
+const lightningFilterButton = document.getElementById('lightning-filter');
+const windFilterButton = document.getElementById('wind-filter');
+const quantumFilterButton = document.getElementById('quantum-filter');
+const imaginaryFilterButton = document.getElementById('imaginary-filter');
+
 let activeChars = [];
 
 filterButtons.forEach(button => {
@@ -29,10 +40,8 @@ function filter(array) {
     if (activeChars.includes(array)) {
         const index = activeChars.indexOf(array);
         activeChars.splice(index, 1);
-        console.log('Removing Array!');
     } else {
         activeChars.push(array);
-        console.log('Pushing Array!');
     }
     if (activeChars.length == 0) {
         for (let char of charButtons) {
@@ -46,7 +55,6 @@ function filter(array) {
                      continue;
                 }
                 activeCharButtons.push(char);
-                console.log(char.getAttribute('title'));
             }
         }
         for (let char of charButtons) {
@@ -65,6 +73,26 @@ physicalFilterButton.addEventListener('click', ()=> {
 
 fireFilterButton.addEventListener('click', ()=> {
     filter(fireChars);
+});
+
+iceFilterButton.addEventListener('click', ()=> {
+    filter(iceChars);
+});
+
+lightningFilterButton.addEventListener('click', ()=> {
+    filter(lightningChars);
+});
+
+windFilterButton.addEventListener('click', ()=> {
+    filter(windChars);
+});
+
+quantumFilterButton.addEventListener('click', ()=> {
+    filter(quantumChars);
+});
+
+imaginaryFilterButton.addEventListener('click', ()=> {
+    filter(imaginaryChars);
 });
 
 window.onscroll = function() {scrollFunction()};

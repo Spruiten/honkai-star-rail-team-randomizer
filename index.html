@@ -57,16 +57,21 @@
             <button id="toggle-all">Select All</button>
         </div>
         <div class="buttons">
-            <img src="images/icons/physical-icon.png" class="filters" id="physical-filter">
-            <img src="images/icons/fire-icon.png" class="filters" id="fire-filter">
-            <img src="images/icons/ice-icon.png" class="filters" id="ice-filter">
-            <img src="images/icons/lightning-icon.png" class="filters" id="lightning-filter">
-            <img src="images/icons/wind-icon.png" class="filters" id="wind-filter">
-            <img src="images/icons/quantum-icon.png" class="filters" id="quantum-filter">
-            <img src="images/icons/imaginary-icon.png" class="filters" id="imaginary-filter">
+            <div id="filter-elements">
+                <img src="images/icons/physical-icon.png" class="filters" id="physical-filter">
+                <img src="images/icons/fire-icon.png" class="filters" id="fire-filter">
+                <img src="images/icons/ice-icon.png" class="filters" id="ice-filter">
+                <img src="images/icons/lightning-icon.png" class="filters" id="lightning-filter">
+                <img src="images/icons/wind-icon.png" class="filters" id="wind-filter">
+                <img src="images/icons/quantum-icon.png" class="filters" id="quantum-filter">
+                <img src="images/icons/imaginary-icon.png" class="filters" id="imaginary-filter">
+            </div>
+            <div id="filter-paths">
+                <img src="images/icons/path_destruction.webp" class="filters">
+            </div>
         </div>
         <div class="character-grid">
-            <button class="character-card" title="Acheron">
+            <button class="character-card lightning" title="Acheron">
                 <div class="a5star-character-icon">
                     <img src="images/characters/acheron.png"
                         alt="Acheron" height="123" width="123" class="char-face">
@@ -88,7 +93,7 @@
                 </div>
                 <div class="character-name">Argenti</div>
             </button>
-            <button class="character-card" title="Arlan">
+            <button class="character-card lightning" title="Arlan">
                 <div class="a4star-character-icon">
                     <img src="images/characters/arlan.png"
                         alt="Arlan" height="123" width="123" class="char-face">
@@ -110,7 +115,7 @@
                 </div>
                 <div class="character-name">Asta</div>
             </button>
-            <button class="character-card" title="Aventurine">
+            <button class="character-card imaginary" title="Aventurine">
                 <div class="a5star-character-icon">
                     <img src="images/characters/aventurine.png"
                         alt="Aventurine" height="123" width="123" class="char-face">
@@ -121,7 +126,7 @@
                 </div>
                 <div class="character-name">Aventurine</div>
             </button>
-            <button class="character-card" title="Bailu">
+            <button class="character-card lightning" title="Bailu">
                 <div class="a5star-character-icon">
                     <img src="images/characters/bailu.png"
                         alt="Bailu" height="123" width="123" class="char-face">
@@ -132,7 +137,7 @@
                 </div>
                 <div class="character-name">Baliu</div>
             </button>
-            <button class="character-card" title="Black Swan">
+            <button class="character-card wind" title="Black Swan">
                 <div class="a5star-character-icon">
                     <img src="images/characters/black-swan.png"
                         alt="Black Swan" height="123" width="123" class="char-face">
@@ -143,7 +148,7 @@
                 </div>
                 <div class="character-name">Black Swan</div>
             </button>
-            <button class="character-card" title="Blade">
+            <button class="character-card wind" title="Blade">
                 <div class="a5star-character-icon">
                     <img src="images/characters/blade.png"
                         alt="Blade" height="123" width="123" class="char-face">
@@ -154,7 +159,7 @@
                 </div>
                 <div class="character-name">Blade</div>
             </button>
-            <button class="character-card" title="Bronya">
+            <button class="character-card wind" title="Bronya">
                 <div class="a5star-character-icon">
                     <img src="images/characters/bronya.png"
                         alt="Bronya" height="123" width="123" class="char-face">
@@ -187,7 +192,7 @@
                 </div>
                 <div class="character-name">Clara</div>
             </button>
-            <button class="character-card" title="Dan Heng">
+            <button class="character-card wind" title="Dan Heng">
                 <div class="a4star-character-icon">
                     <img src="images/characters/danheng.png"
                         alt="Dan Heng" height="123" width="123" class="char-face">
@@ -198,7 +203,7 @@
                 </div>
                 <div class="character-name">Dan Heng</div>
             </button>
-            <button class="character-card" title="Dan Heng • IL">
+            <button class="character-card imaginary" title="Dan Heng • IL">
                 <div class="a5star-character-icon">
                     <img src="images/characters/dhil.png"
                         alt="Dan Heng • IL" height="123" width="123" class="char-face">
@@ -209,7 +214,7 @@
                 </div>
                 <div class="character-name">Dan Heng IL</div>
             </button>
-            <button class="character-card" title="Dr. Ratio">
+            <button class="character-card imaginary" title="Dr. Ratio">
                 <div class="a5star-character-icon">
                     <img src="images/characters/dr-ratio.png"
                         alt="Dr. Ratio" height="123" width="123" class="char-face">
@@ -218,9 +223,9 @@
                     <img src="images/icons/ele_imaginary_bg.webp"
                         class="element-icon" title="Imaginary">
                 </div>
-                <div class="character-name">Dr. Ratio</div>
+                <div class="character-name imaginary">Dr. Ratio</div>
             </button>
-            <button class="character-card" title="Feixiao">
+            <button class="character-card wind" title="Feixiao">
                 <div class="a5star-character-icon">
                     <img src="images/characters/feixiao.png"
                         alt="Feixiao" height="123" width="123" class="char-face">
@@ -242,7 +247,7 @@
                 </div>
                 <div class="character-name">Firefly</div>
             </button>
-            <button class="character-card" title="Fu Xuan">
+            <button class="character-card quantum" title="Fu Xuan">
                 <div class="a5star-character-icon">
                     <img src="images/characters/fu-xuan.png"
                         alt="Fu Xuan" height="123" width="123" class="char-face">
@@ -264,7 +269,7 @@
                 </div>
                 <div class="character-name">Gallagher</div>
             </button>
-            <button class="character-card" title="Gepard">
+            <button class="character-card ice" title="Gepard">
                 <div class="a5star-character-icon">
                     <img src="images/characters/gepard.png"
                         alt="Gepard" height="123" width="123" class="char-face">
@@ -297,7 +302,7 @@
                 </div>
                 <div class="character-name">Hanya</div>
             </button>
-            <button class="character-card" title="Herta">
+            <button class="character-card ice" title="Herta">
                 <div class="a4star-character-icon">
                     <img src="images/characters/herta.png"
                         alt="Herta" height="123" width="123" class="char-face">
@@ -330,7 +335,7 @@
                 </div>
                 <div class="character-name">Hook</div>
             </button>
-            <button class="character-card" title="Huohuo">
+            <button class="character-card wind" title="Huohuo">
                 <div class="a5star-character-icon">
                     <img src="images/characters/huohuo.png"
                         alt="Huohuo" height="123" width="123" class="char-face">
@@ -341,7 +346,7 @@
                 </div>
                 <div class="character-name">Huohuo</div>
             </button>
-            <button class="character-card" title="Jade">
+            <button class="character-card quantum" title="Jade">
                 <div class="a5star-character-icon">
                     <img src="images/characters/jade.png"
                         alt="Jade" height="123" width="123" class="char-face">
@@ -363,7 +368,7 @@
                 </div>
                 <div class="character-name">Jiaoqiu</div>
             </button>
-            <button class="character-card" title="Jing Yuan">
+            <button class="character-card lightning" title="Jing Yuan">
                 <div class="a5star-character-icon">
                     <img src="images/characters/jing-yuan.png"
                         alt="Jing Yuan" height="123" width="123" class="char-face">
@@ -374,7 +379,7 @@
                 </div>
                 <div class="character-name">Jing Yuan</div>
             </button>
-            <button class="character-card" title="Jingliu">
+            <button class="character-card ice" title="Jingliu">
                 <div class="a5star-character-icon">
                     <img src="images/characters/jingliu.png"
                         alt="Jingliu" height="123" width="123" class="char-face">
@@ -385,7 +390,7 @@
                 </div>
                 <div class="character-name">Jingliu</div>
             </button>
-            <button class="character-card" title="Kafka">
+            <button class="character-card lightning" title="Kafka">
                 <div class="a5star-character-icon">
                     <img src="images/characters/kafka.png"
                         alt="Kafka" height="123" width="123" class="char-face">
@@ -407,7 +412,7 @@
                 </div>
                 <div class="character-name">Luka</div>
             </button>
-            <button class="character-card" title="Luocha">
+            <button class="character-card imaginary" title="Luocha">
                 <div class="a5star-character-icon">
                     <img src="images/characters/luocha.png"
                         alt="Luocha" height="123" width="123" class="char-face">
@@ -418,7 +423,7 @@
                 </div>
                 <div class="character-name">Luocha</div>
             </button>
-            <button class="character-card" title="Lynx">
+            <button class="character-card quantum" title="Lynx">
                 <div class="a4star-character-icon">
                     <img src="images/characters/lynx.png"
                         alt="Lynx" height="123" width="123" class="char-face">
@@ -429,7 +434,7 @@
                 </div>
                 <div class="character-name">Lynx</div>
             </button>
-            <button class="character-card" title="March 7th" data-duplicate="March">
+            <button class="character-card ice" title="March 7th" data-duplicate="March">
                 <div class="a4star-character-icon">
                     <img src="images/characters/march7th.png"
                         alt="March 7th" height="123" width="123" class="char-face">
@@ -440,7 +445,7 @@
                 </div>
                 <div class="character-name">March 7th</div>
             </button>
-            <button class="character-card" title="March 7th (Hunt)" data-duplicate="March">
+            <button class="character-card imaginary" title="March 7th (Hunt)" data-duplicate="March">
                 <div class="a4star-character-icon">
                     <img src="images/characters/march7th-hunt.png"
                         alt="March 7th" height="123" width="123" class="char-face">
@@ -451,7 +456,7 @@
                 </div>
                 <div class="character-name">March 7th</div>
             </button>
-            <button class="character-card" title="Misha">
+            <button class="character-card ice" title="Misha">
                 <div class="a4star-character-icon">
                     <img src="images/characters/misha.png"
                         alt="Misha" height="123" width="123" class="char-face">
@@ -462,7 +467,7 @@
                 </div>
                 <div class="character-name">Misha</div>
             </button>
-            <button class="character-card" title="Moze">
+            <button class="character-card lightning" title="Moze">
                 <div class="a4star-character-icon">
                     <img src="images/characters/moze.png"
                         alt="Moze" height="123" width="123" class="char-face">
@@ -484,7 +489,7 @@
                 </div>
                 <div class="character-name">Natasha</div>
             </button>
-            <button class="character-card" title="Pela">
+            <button class="character-card ice" title="Pela">
                 <div class="a4star-character-icon">
                     <img src="images/characters/pela.png"
                         alt="Pela" height="123" width="123" class="char-face">
@@ -495,7 +500,7 @@
                 </div>
                 <div class="character-name">Pela</div>
             </button>
-            <button class="character-card" title="Qingque">
+            <button class="character-card quantum" title="Qingque">
                 <div class="a4star-character-icon">
                     <img src="images/characters/qingque.png"
                         alt="Qingque" height="123" width="123" class="char-face">
@@ -517,7 +522,7 @@
                 </div>
                 <div class="character-name">Robin</div>
             </button>
-            <button class="character-card" title="Ruan Mei">
+            <button class="character-card ice" title="Ruan Mei">
                 <div class="a5star-character-icon">
                     <img src="images/characters/ruan-mei.png"
                         alt="Ruan Mei" height="123" width="123" class="char-face">
@@ -528,7 +533,7 @@
                 </div>
                 <div class="character-name">Ruan Mei</div>
             </button>
-            <button class="character-card" title="Sampo">
+            <button class="character-card wind" title="Sampo">
                 <div class="a4star-character-icon">
                     <img src="images/characters/sampo.png"
                         alt="Sampo" height="123" width="123" class="char-face">
@@ -539,7 +544,7 @@
                 </div>
                 <div class="character-name">Sampo</div>
             </button>
-            <button class="character-card" title="Seele">
+            <button class="character-card quantum" title="Seele">
                 <div class="a5star-character-icon">
                     <img src="images/characters/seele.png"
                         alt="Seele" height="123" width="123" class="char-face">
@@ -550,7 +555,7 @@
                 </div>
                 <div class="character-name">Seele</div>
             </button>
-            <button class="character-card" title="Serval">
+            <button class="character-card lightning" title="Serval">
                 <div class="a4star-character-icon">
                     <img src="images/characters/serval.png"
                         alt="Serval" height="123" width="123" class="char-face">
@@ -561,7 +566,7 @@
                 </div>
                 <div class="character-name">Serval</div>
             </button>
-            <button class="character-card" title="Silver Wolf">
+            <button class="character-card quantum" title="Silver Wolf">
                 <div class="a5star-character-icon">
                     <img src="images/characters/silver-wolf.png"
                         alt="Silver Wolf" height="123" width="123" class="char-face">
@@ -572,7 +577,7 @@
                 </div>
                 <div class="character-name">Silver Wolf</div>
             </button>
-            <button class="character-card" title="Sparkle">
+            <button class="character-card quantum" title="Sparkle">
                 <div class="a5star-character-icon">
                     <img src="images/characters/sparkle.png"
                         alt="Sparkle" height="123" width="123" class="char-face">
@@ -594,7 +599,7 @@
                 </div>
                 <div class="character-name">Sushang</div>
             </button>
-            <button class="character-card" title="Tingyun">
+            <button class="character-card lightning" title="Tingyun">
                 <div class="a4star-character-icon">
                     <img src="images/characters/tingyun.png"
                         alt="Tingyun" height="123" width="123" class="char-face">
@@ -627,7 +632,7 @@
                 </div>
                 <div class="character-name">Trailblazer</div>
             </button>
-            <button class="character-card" title="Trailblazer (Imaginary)" data-duplicate="Trailblazer">
+            <button class="character-card imaginary" title="Trailblazer (Imaginary)" data-duplicate="Trailblazer">
                 <div class="a5star-character-icon">
                     <img src="images/characters/imaginary-trailblazer.png"
                         alt="Trailblazer (Imaginary)" height="123" width="123" class="char-face">
@@ -649,7 +654,7 @@
                 </div>
                 <div class="character-name">Trailblazer</div>
             </button>
-            <button class="character-card" title="Welt">
+            <button class="character-card imaginary" title="Welt">
                 <div class="a5star-character-icon">
                     <img src="images/characters/welt.png"
                         alt="Welt" height="123" width="123" class="char-face">
@@ -660,7 +665,7 @@
                 </div>
                 <div class="character-name">Welt</div>
             </button>
-            <button class="character-card" title="Xueyi">
+            <button class="character-card quantum" title="Xueyi">
                 <div class="a4star-character-icon">
                     <img src="images/characters/xueyi.png"
                         alt="Xueyi" height="123" width="123" class="char-face">
@@ -671,7 +676,7 @@
                 </div>
                 <div class="character-name">Xueyi</div>
             </button>
-            <button class="character-card" title="Yanqing">
+            <button class="character-card ice" title="Yanqing">
                 <div class="a5star-character-icon">
                     <img src="images/characters/yanqing.png"
                         alt="Yanqing" height="123" width="123" class="char-face">
@@ -682,7 +687,7 @@
                 </div>
                 <div class="character-name">Yanqing</div>
             </button>
-            <button class="character-card" title="Yukong">
+            <button class="character-card imaginary" title="Yukong">
                 <div class="a4star-character-icon">
                     <img src="images/characters/yukong.png"
                         alt="Yukong" height="123" width="123" class="char-face">
