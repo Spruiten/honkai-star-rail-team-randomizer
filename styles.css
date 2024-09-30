@@ -184,6 +184,13 @@ body {
     filter:brightness(100%);
 }
 
+#destruction-filter, #hunt-filter, #erudition-filter, #harmony-filter,
+#nihility-filter, #preservation-filter, #abundance-filter {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
+
 #scroll-top {
     display: none;
     cursor: pointer;

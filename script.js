@@ -20,6 +20,13 @@ const lightningChars = Array.from(charButtons).filter(button => button.classList
 const windChars = Array.from(charButtons).filter(button => button.classList.contains('wind'));
 const quantumChars = Array.from(charButtons).filter(button => button.classList.contains('quantum'));
 const imaginaryChars = Array.from(charButtons).filter(button => button.classList.contains('imaginary'));
+const destructionChars = Array.from(charButtons).filter(button => button.classList.contains('destruction'));
+const huntChars = Array.from(charButtons).filter(button => button.classList.contains('hunt'));
+const eruditionChars = Array.from(charButtons).filter(button => button.classList.contains('erudition'));
+const harmonyChars = Array.from(charButtons).filter(button => button.classList.contains('harmony'));
+const nihilityChars = Array.from(charButtons).filter(button => button.classList.contains('nihility'));
+const preservationChars = Array.from(charButtons).filter(button => button.classList.contains('preservation'));
+const abundanceChars = Array.from(charButtons).filter(button => button.classList.contains('abundance'));
 const physicalFilterButton = document.getElementById('physical-filter');
 const fireFilterButton = document.getElementById('fire-filter');
 const iceFilterButton = document.getElementById('ice-filter');
@@ -27,8 +34,16 @@ const lightningFilterButton = document.getElementById('lightning-filter');
 const windFilterButton = document.getElementById('wind-filter');
 const quantumFilterButton = document.getElementById('quantum-filter');
 const imaginaryFilterButton = document.getElementById('imaginary-filter');
+const destructionFilterButton = document.getElementById('destruction-filter');
+const huntFilterButton = document.getElementById('hunt-filter');
+const eruditionFilterButton = document.getElementById('erudition-filter');
+const harmonyFilterButton = document.getElementById('harmony-filter');
+const nihilityFilterButton = document.getElementById('nihility-filter');
+const preservationFilterButton = document.getElementById('preservation-filter');
+const abundanceFilterButton = document.getElementById('abundance-filter');
 
-let activeChars = [];
+let activeElements = [];
+let activePaths = [];
 
 filterButtons.forEach(button => {
     button.addEventListener('click', ()=> {
@@ -36,20 +51,32 @@ filterButtons.forEach(button => {
     });
 });
 
-function filter(array) {
-    if (activeChars.includes(array)) {
-        const index = activeChars.indexOf(array);
-        activeChars.splice(index, 1);
+function elementFilter(array) {
+    if (activeElements.includes(array)) {
+        const index = activeElements.indexOf(array);
+        activeElements.splice(index, 1);
     } else {
-        activeChars.push(array);
+        activeElements.push(array);
     }
-    if (activeChars.length == 0) {
+}
+
+function pathFilter(array) {
+    if (activePaths.includes(array)) {
+        const index = activePaths.indexOf(array);
+        activePaths.splice(index, 1);
+    } else {
+        activePaths.push(array);
+    }
+}
+
+function filter() {
+    if (activeElements.length == 0 && activePaths.length == 0) {
         for (let char of charButtons) {
             char.style.display = "inline-block";
         }
     } else {
         let activeCharButtons = [];
-        for (let chars of activeChars) {
+        for (let chars of activeElements) {
             for (let char of chars) {
                 if (activeCharButtons.includes(char)) {
                      continue;
@@ -57,42 +84,111 @@ function filter(array) {
                 activeCharButtons.push(char);
             }
         }
-        for (let char of charButtons) {
-            if (activeCharButtons.includes(char)) {
-                char.style.display = "inline-block";
-                continue;
+        let activePathButtons = [];
+        for (let chars of activePaths) {
+            for (let char of chars) {
+                if (activePathButtons.includes(char)) {
+                     continue;
+                }
+                activePathButtons.push(char);
             }
-            char.style.display = "none";
+        }
+        if (activePaths.length == 0) {
+            for (let char of charButtons) {
+                if (activeCharButtons.includes(char)) {
+                    char.style.display = "inline-block";
+                    continue;
+                }
+                char.style.display = "none";
+            }
+        } else if (activeElements.length == 0) {
+            for (let char of charButtons) {
+                if (activePathButtons.includes(char)) {
+                    char.style.display = "inline-block";
+                    continue;
+                }
+                char.style.display = "none";
+            }
+        } else {
+            for (let char of charButtons) {
+                if (activeCharButtons.includes(char) && activePathButtons.includes(char)) {
+                    char.style.display = "inline-block";
+                    continue;
+                }
+                char.style.display = "none";
+            }
         }
     }
 }
 
 physicalFilterButton.addEventListener('click', ()=> {
-    filter(physChars);
+    elementFilter(physChars);
+    filter();
 });
 
 fireFilterButton.addEventListener('click', ()=> {
-    filter(fireChars);
+    elementFilter(fireChars);
+    filter();
 });
 
 iceFilterButton.addEventListener('click', ()=> {
-    filter(iceChars);
+    elementFilter(iceChars);
+    filter();
 });
 
 lightningFilterButton.addEventListener('click', ()=> {
-    filter(lightningChars);
+    elementFilter(lightningChars);
+    filter();
 });
 
 windFilterButton.addEventListener('click', ()=> {
-    filter(windChars);
+    elementFilter(windChars);
+    filter();
 });
 
 quantumFilterButton.addEventListener('click', ()=> {
-    filter(quantumChars);
+    elementFilter(quantumChars);
+    filter();
 });
 
 imaginaryFilterButton.addEventListener('click', ()=> {
-    filter(imaginaryChars);
+    elementFilter(imaginaryChars);
+    filter();
+});
+
+destructionFilterButton.addEventListener('click', ()=> {
+    pathFilter(destructionChars);
+    filter();
+});
+
+huntFilterButton.addEventListener('click', ()=> {
+    pathFilter(huntChars);
+    filter();
+});
+
+eruditionFilterButton.addEventListener('click', ()=> {
+    pathFilter(eruditionChars);
+    filter();
+});
+
+harmonyFilterButton.addEventListener('click', ()=> {
+    pathFilter(harmonyChars);
+    filter();
+});
+
+nihilityFilterButton.addEventListener('click', ()=> {
+    pathFilter(nihilityChars);
+    filter();
+});
+
+preservationFilterButton.addEventListener('click', ()=> {
+    pathFilter(preservationChars);
+    filter();
+});
+
+abundanceFilterButton.addEventListener('click', ()=> {
+    pathFilter(abundanceChars);
+    filter();
 });
 
 window.onscroll = function() {scrollFunction()};
