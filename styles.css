@@ -493,6 +493,21 @@ body {
     margin: 0px 8px 8px 0px;
 }
 
+.board {
+    background-color: #211f21;
+    border-radius: 7px;
+    border: 1px solid #c6a662;
+    padding: 5px;
+}
+
+.board p {
+    margin: 0px;
+}
+
+#poll:visited {
+    color: #FFF4FF;
+}
+
 ::selection {
     background: #e684e662
 }
