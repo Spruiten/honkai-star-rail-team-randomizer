@@ -446,6 +446,7 @@ body {
 #changelog-inner, #settings-inner {
     background-color: #0000000c;
     backdrop-filter: blur(7px) saturate(135%);
+    -webkit-backdrop-filter: blur(7px) saturate(135%);
     box-shadow: 0 4px 30px #C197FF;
     height: 85%;
     width: min(450px, 80vw);
