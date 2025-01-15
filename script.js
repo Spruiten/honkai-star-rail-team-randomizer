@@ -27,6 +27,7 @@ const harmonyChars = Array.from(charButtons).filter(button => button.classList.c
 const nihilityChars = Array.from(charButtons).filter(button => button.classList.contains('nihility'));
 const preservationChars = Array.from(charButtons).filter(button => button.classList.contains('preservation'));
 const abundanceChars = Array.from(charButtons).filter(button => button.classList.contains('abundance'));
+const remembranceChars = Array.from(charButtons).filter(button => button.classList.contains('remembrance'));
 const physicalFilterButton = document.getElementById('physical-filter');
 const fireFilterButton = document.getElementById('fire-filter');
 const iceFilterButton = document.getElementById('ice-filter');
@@ -41,6 +42,8 @@ const harmonyFilterButton = document.getElementById('harmony-filter');
 const nihilityFilterButton = document.getElementById('nihility-filter');
 const preservationFilterButton = document.getElementById('preservation-filter');
 const abundanceFilterButton = document.getElementById('abundance-filter');
+const remembranceFilterButton = document.getElementById('remembrance-filter');
+const bgChangerButton = document.getElementById('bg-changer-button');
 
 let activeElements = [];
 let activePaths = [];
@@ -191,6 +194,11 @@ abundanceFilterButton.addEventListener('click', ()=> {
     filter();
 });
 
+remembranceFilterButton.addEventListener('click', ()=> {
+    pathFilter(remembranceChars);
+    filter();
+});
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -234,6 +242,17 @@ settingsButton.addEventListener('click', () => {
 closeSettings.addEventListener('click', () => {
     settingsMenu.classList.remove("open");
 });
+
+bgChangerButton.addEventListener('click', () => {
+    document.body.classList.toggle('true-herta');
+    if (bgChangerButton.textContent == "Madam Herta") {
+        bgChangerButton.textContent = "Herta Puppet";
+        localStorage.setItem("background", "puppet");
+    } else {
+        bgChangerButton.textContent = "Madam Herta";
+        localStorage.setItem("background", "madam");
+    }
+})
 
 scrollToTopButton.addEventListener('click', () => {
     document.body.scrollTop = 0;
@@ -349,6 +368,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             button.classList.remove('lit-up');
         }
     });
+
+    // loading chosen Herta background avatar
+    const hertaBG = localStorage.getItem("background") == "puppet";
+    if (hertaBG) {
+        document.body.classList.remove('true-herta');
+        bgChangerButton.textContent = "Herta Puppet";
+    }
     
     // checking if all buttons are lit once page loads
     const allLit = Array.from(charButtons).every(button => button.classList.contains('lit-up'));

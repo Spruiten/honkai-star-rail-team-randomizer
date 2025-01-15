@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="images/icons/march-grin.png">
 </head>
 
-<body>
+<body class="true-herta">
     <noscript>Sorry, your browser does not have JavaScript enabled!</noscript>
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1406edbc5f8e4f5b82ff1b2b6402fa71"}'></script>
@@ -77,6 +77,7 @@
                 <img src="images/icons/path_nihility.webp" class="filters" id="nihility-filter">
                 <img src="images/icons/path_preservation.webp" class="filters" id="preservation-filter">
                 <img src="images/icons/path_abundance.webp" class="filters" id="abundance-filter">
+                <img src="images/icons/path_remembrance.webp" class="filters" id="remembrance-filter">
             </div>
         </div>
         <div class="character-grid">
@@ -652,6 +653,17 @@
                 </div>
                 <div class="character-name">Sushang</div>
             </button>
+            <button class="character-card ice erudition" title="The Herta">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/true-herta.png"
+                        alt="The Herta" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_erudition.webp"
+                        class="path-icon" title="Erudition">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
+                </div>
+                <div class="character-name">The Herta</div>
+            </button>
             <button class="character-card lightning harmony" title="Tingyun">
                 <div class="a4star-character-icon">
                     <img src="images/characters/tingyun.png"
@@ -704,6 +716,17 @@
                         class="path-icon" title="Harmony">
                     <img src="images/icons/ele_imaginary_bg.webp"
                         class="element-icon" title="Imaginary">
+                </div>
+                <div class="character-name">Trailblazer</div>
+            </button>
+            <button class="character-card ice remembrance" title="Trailblazer (Remembrance)" data-duplicate="Trailblazer">
+                <div class="a5star-character-icon">
+                    <img src="images/characters/ice-trailblazer.png"
+                        alt="Trailblazer (Remembrance)" height="123" width="123" class="char-face">
+                    <img src="images/icons/path_remembrance.webp"
+                        class="path-icon" title="Remembrance">
+                    <img src="images/icons/ele_ice_bg.webp"
+                        class="element-icon" title="Ice">
                 </div>
                 <div class="character-name">Trailblazer</div>
             </button>
@@ -774,6 +797,14 @@
                 <p>Welcome to Herta's Simulated Team Randomizer! New characters will be added accordingly
                     whenever they are released.</p>
                 <div id="versions">
+                    <p class="version-date">2025-01-14</p>
+                    <ul>
+                        <li>Added The Herta</li>
+                        <li>Added Remembrance Trailblazer</li>
+                        <li>Changed the background to celebrate Madam Herta's release; if you prefer 
+                            the old background of Puppet Herta, you can change it back in the settings</li>
+                        <li>Added Remembrance Path Filter</li>
+                    </ul>
                     <p class="version-date">2024-12-25</p>
                     <ul>
                         <li>Added Fugue</li>
@@ -789,11 +820,6 @@
                     <p class="version-date">2024-10-06</p>
                     <ul>
                         <li>Added Lingsha</li>
-                    </ul>
-                    <p class="version-date">2024-09-30</p>
-                    <ul>
-                        <li>Added the Ability to Filter Characters by Element and Path</li>
-                        <li>Added Poll Board</li>
                     </ul>
                 </div>
             </ul>
@@ -818,6 +844,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" id="close-changelog" height="24px" viewBox="0 -960 960 960" width="24px" 
             fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             <div id="changelog-list">
+                <p>2025-01-14</p>
+                <ul>
+                    <li>Added The Herta</li>
+                    <li>Added Remembrance Trailblazer</li>
+                    <li>Changed the background to celebrate Madam Herta's release; if you prefer 
+                        the old background of Puppet Herta, you can change it back in the settings</li>
+                    <li>Added Remembrance Path Filter</li>
+                </ul>
                 <p>2024-12-25</p>
                 <ul>
                     <li>Added Fugue</li>
@@ -883,7 +917,10 @@
             <svg xmlns="http://www.w3.org/2000/svg" id="close-settings" height="24px" viewBox="0 -960 960 960" width="24px" 
             fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             <div id="settings-list">
-                <p>Work In Progress</p>
+                <div id="bg-changer">
+                    <p>Background</p>
+                    <button id="bg-changer-button">Madam Herta</button>
+                </div>
             </div>
         </div>
     </div>

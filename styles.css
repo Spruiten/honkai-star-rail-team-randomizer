@@ -9,6 +9,12 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+body.true-herta {
+    background-image: url(images/icons/true-herta-splash.webp);
+    background-size: 135%;
+    background-position: 50% -315px;
+}
+
 @font-face {
     font-family: 'DIN';
     src: url('DIN-font/DIN.ttf');
@@ -187,7 +193,7 @@ body {
 }
 
 #destruction-filter, #hunt-filter, #erudition-filter, #harmony-filter,
-#nihility-filter, #preservation-filter, #abundance-filter {
+#nihility-filter, #preservation-filter, #abundance-filter, #remembrance-filter {
     width: 35px;
     height: 35px;
     padding: 5px;
@@ -478,8 +484,23 @@ body {
 }
 
 #settings-list {
-    text-align: center;
-    padding-top: 200px;
+    padding: 5px 0px 0px 0px;
+}
+
+#bg-changer {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    background-color: #C197FF2e;
+    padding-left: 20px;
+}
+
+#bg-changer-button {
+    background-color: #80008059;
+    border: 0px;
+    color: #FFF4FF;
+    cursor: pointer;
+    font-family: 'DIN', monospace;
+    font-size: 20px;
 }
 
 #copyright {
@@ -517,6 +538,11 @@ body {
     body {
         background-size: 110%;
         background-position: -5px 135px;
+    }
+
+    body.true-herta {
+        background-size: 155%;
+        background-position: 50% -245px;
     }
 
     .herta {
@@ -580,6 +606,11 @@ body {
     body {
         background-size: 200%;
         background-position: 45% 50px;
+    }
+
+    body.true-herta {
+        background-size: 235%;
+        background-position: 50% -350px;
     }
 
     .herta {
@@ -676,8 +707,11 @@ body {
 
 @media screen and (max-width: 570px) {
     body {
-        background-size: 200%;
         background-position: 45% 175px;
+    }
+
+    body.true-herta {
+        background-position: 50% -35px;
     }
     
     .sel-char {
@@ -753,5 +787,9 @@ body {
 
     #changelog-header, #settings-header {
         font-size: 20px;
+    }
+
+    #bg-changer-button {
+        font-size: 17px;
     }
 }
