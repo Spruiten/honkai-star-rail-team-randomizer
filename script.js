@@ -12,7 +12,9 @@ const settingsMenu = document.getElementById('settings');
 const settingsButton = document.getElementById('settings-button');
 const closeSettings = document.getElementById('close-settings');
 const scrollToTopButton = document.getElementById('scroll-top');
+const bgChangerButton = document.getElementById('bg-changer-button');
 const filterButtons = Array.from(document.getElementsByClassName('filters'));
+
 const physChars = Array.from(charButtons).filter(button => button.classList.contains('physical'));
 const fireChars = Array.from(charButtons).filter(button => button.classList.contains('fire'));
 const iceChars = Array.from(charButtons).filter(button => button.classList.contains('ice'));
@@ -20,6 +22,7 @@ const lightningChars = Array.from(charButtons).filter(button => button.classList
 const windChars = Array.from(charButtons).filter(button => button.classList.contains('wind'));
 const quantumChars = Array.from(charButtons).filter(button => button.classList.contains('quantum'));
 const imaginaryChars = Array.from(charButtons).filter(button => button.classList.contains('imaginary'));
+
 const destructionChars = Array.from(charButtons).filter(button => button.classList.contains('destruction'));
 const huntChars = Array.from(charButtons).filter(button => button.classList.contains('hunt'));
 const eruditionChars = Array.from(charButtons).filter(button => button.classList.contains('erudition'));
@@ -28,6 +31,7 @@ const nihilityChars = Array.from(charButtons).filter(button => button.classList.
 const preservationChars = Array.from(charButtons).filter(button => button.classList.contains('preservation'));
 const abundanceChars = Array.from(charButtons).filter(button => button.classList.contains('abundance'));
 const remembranceChars = Array.from(charButtons).filter(button => button.classList.contains('remembrance'));
+
 const physicalFilterButton = document.getElementById('physical-filter');
 const fireFilterButton = document.getElementById('fire-filter');
 const iceFilterButton = document.getElementById('ice-filter');
@@ -35,6 +39,7 @@ const lightningFilterButton = document.getElementById('lightning-filter');
 const windFilterButton = document.getElementById('wind-filter');
 const quantumFilterButton = document.getElementById('quantum-filter');
 const imaginaryFilterButton = document.getElementById('imaginary-filter');
+
 const destructionFilterButton = document.getElementById('destruction-filter');
 const huntFilterButton = document.getElementById('hunt-filter');
 const eruditionFilterButton = document.getElementById('erudition-filter');
@@ -43,7 +48,6 @@ const nihilityFilterButton = document.getElementById('nihility-filter');
 const preservationFilterButton = document.getElementById('preservation-filter');
 const abundanceFilterButton = document.getElementById('abundance-filter');
 const remembranceFilterButton = document.getElementById('remembrance-filter');
-const bgChangerButton = document.getElementById('bg-changer-button');
 
 let activeElements = [];
 let activePaths = [];
@@ -209,22 +213,11 @@ function scrollFunction() {
     }
 }
 
-function randomValueFromArray(array){
-    const random = Math.floor(Math.random() * array.length);
-    // console.log(array[random]);
-    return array[random];
-};
-
-popButton.addEventListener('click', function () {
-    if (popButton.textContent == ">") {
-        popButton.textContent = "<";
-        sideMenu.classList.add('active');
-        popButton.classList.add('active');
-    } else {
-        popButton.textContent = ">"
-        sideMenu.classList.remove('active');
-        popButton.classList.remove('active');
-    }
+popButton.addEventListener('click', () => {
+  const active = popButton.textContent === ">";
+  popButton.textContent = active ? "<" : ">";
+  sideMenu.classList.toggle('active', active);
+  popButton.classList.toggle('active', active);
 });
 
 changelogButton.addEventListener('click', () => {
@@ -259,6 +252,12 @@ scrollToTopButton.addEventListener('click', () => {
     document.documentElement.scrollTop = 0;
 })
 
+function randomValueFromArray(array){
+    const random = Math.floor(Math.random() * array.length);
+    // console.log(array[random]);
+    return array[random];
+};
+
 function removeDuplicates(selectedValue, index, randPool) {
     randPool.splice(index, 1);
     const duplicates = randPool.filter(button => button.hasAttribute('data-duplicate'));
@@ -270,13 +269,7 @@ function removeDuplicates(selectedValue, index, randPool) {
             selectedDupes.push(dupe);
         }
     }
-    let dupeindex = 0;
-    let i = 0;
-    for (let dupe of selectedDupes) {
-        dupeindex = randPool.indexOf(selectedDupes[i]);
-        randPool.splice(dupeindex, 1);
-        i += 1;
-    }
+    selectedDupes.forEach(dupe => randPool.splice(randPool.indexOf(dupe), 1));
 };
 
 randButton.addEventListener('click', function () {
@@ -313,23 +306,10 @@ randButton.addEventListener('click', function () {
                 break;
             }
           }
-        let maxLen = chosen.length;
-        i = 0;
-        for (const name of selTitle) {
-            name.textContent = chosen[i].getAttribute('title');
-            i += 1;
-            if (i >= maxLen) {
-                break;
-            }
-        }
-        i = 0;
-        for (const icon of selChar) {
-            icon.src = chosen[i].querySelector('.char-face').getAttribute('src');
-            i += 1;
-            if (i >= maxLen) {
-                break;
-            }
-        }
+        chosen.forEach((char, i) => {
+            selTitle[i].textContent = char.getAttribute('title');
+            selChar[i].src = char.querySelector('.char-face').src;
+        });
     }
 });
 
