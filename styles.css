@@ -375,6 +375,9 @@ body.true-herta {
     padding: 5px 5px;
     font-family: 'DIN Medium', monospace;
     color: #151515;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .updatelog {
@@ -408,7 +411,7 @@ body.true-herta {
     border-left: 6px solid #7b3193;
     border-bottom-left-radius: 15px;
     background-color: #8f6ea95b;
-    box-shadow: 0px 0px 15px #80008052;
+    box-shadow: 0px 0px 15px #8080ff80;
 }
 
 .version-date {
