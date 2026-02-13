@@ -67,7 +67,7 @@ body.true-herta {
     border-bottom-left-radius: 35%;
     border-top-right-radius: 35%;
     background-color: #00000080;
-    box-shadow: rgba(128, 0, 128, 0.1) 0px 0px 0px 2px;
+    box-shadow: rgba(128, 128, 255, 0.35) 0px 0px 0px 2px;
 }
 
 .chosen-title {
@@ -150,7 +150,7 @@ body.true-herta {
     color: #111111;
     padding: 7px;
     background-color: #f1ecf7;
-    border: 3px solid #800080;
+    border: 3px solid #8080ff;
     border-radius: 7px;
     transition: .35s ease all;
     cursor: pointer;
@@ -193,7 +193,8 @@ body.true-herta {
 }
 
 #destruction-filter, #hunt-filter, #erudition-filter, #harmony-filter,
-#nihility-filter, #preservation-filter, #abundance-filter, #remembrance-filter {
+#nihility-filter, #preservation-filter, #abundance-filter, #remembrance-filter,
+#elation-filter {
     width: 35px;
     height: 35px;
     padding: 5px;
@@ -408,16 +409,16 @@ body.true-herta {
 .features-text {
     font-size: 25px;
     padding: 3px 0px 3px 6px;
-    border-left: 6px solid #7b3193;
+    border-left: 6px solid #8080ff;
     border-bottom-left-radius: 15px;
-    background-color: #8f6ea95b;
+    background-color: #8080ff5b;
     box-shadow: 0px 0px 15px #8080ff80;
 }
 
 .version-date {
     padding: 3px 0px 3px 6px;
-    border-left: 6px solid #7b3193;
-    background-color: #8f6ea95b;
+    border-left: 6px solid #8080ff;
+    background-color: #8080ff5b;
 }
 
 #changelog-button, #settings-button {
@@ -498,7 +499,7 @@ body.true-herta {
 }
 
 #bg-changer-button {
-    background-color: #80008059;
+    background-color: #8080ff59;
     border: 0px;
     color: #FFF4FF;
     cursor: pointer;

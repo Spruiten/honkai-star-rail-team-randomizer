@@ -31,6 +31,7 @@ const nihilityChars = Array.from(charButtons).filter(button => button.classList.
 const preservationChars = Array.from(charButtons).filter(button => button.classList.contains('preservation'));
 const abundanceChars = Array.from(charButtons).filter(button => button.classList.contains('abundance'));
 const remembranceChars = Array.from(charButtons).filter(button => button.classList.contains('remembrance'));
+const elationChars = Array.from(charButtons).filter(button => button.classList.contains('elation'));
 
 const physicalFilterButton = document.getElementById('physical-filter');
 const fireFilterButton = document.getElementById('fire-filter');
@@ -48,6 +49,7 @@ const nihilityFilterButton = document.getElementById('nihility-filter');
 const preservationFilterButton = document.getElementById('preservation-filter');
 const abundanceFilterButton = document.getElementById('abundance-filter');
 const remembranceFilterButton = document.getElementById('remembrance-filter');
+const elationFilterButton = document.getElementById('elation-filter');
 
 let activeElements = [];
 let activePaths = [];
@@ -200,6 +202,11 @@ abundanceFilterButton.addEventListener('click', ()=> {
 
 remembranceFilterButton.addEventListener('click', ()=> {
     pathFilter(remembranceChars);
+    filter();
+});
+
+elationFilterButton.addEventListener('click', ()=> {
+    pathFilter(elationChars);
     filter();
 });
 
